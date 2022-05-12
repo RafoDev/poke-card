@@ -1,0 +1,186 @@
+:root{
+    --bg-color-light: #F2F1F0;
+    --bg-color-dark: rgb(63, 63, 63);
+    --card-color:rgb(247, 247, 247);
+    --box-shadow: 0px 0px 60px rgba(51, 51, 51, 0.158);
+    --text-color-black: rgb(63, 63, 63);
+    --primary-color: rgb(35, 196, 228);
+    --text-color-white: #EBEBEB;
+    --font-family: 'Roboto', sans-serif;
+    --poke-font-family: 'VT323', monospace;
+}
+@mixin flex($flex-direction, $flex-wrap,$justify-content,$align-items,$gap)
+{
+    display: flex;
+    flex-direction: $flex-direction;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+.body {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-black);
+    min-height: 100vh;
+    margin: 0;
+
+    @include flex(column,nowrap,space-between,stretch,0);
+}
+
+
+.main {
+    font-family: 'Roboto', sans-serif;
+    &-container {
+        margin: 0 auto;
+        max-width: 1080px;
+        height: 100%;
+        @include flex(row,wrap,space-around,center,2rem);
+    }
+}
+.poke-card {
+    background-color: var(--card-color);
+    padding: 2em 1.5em;
+    box-shadow: var(--box-shadow);
+    width: 400px;
+    border-radius: 1rem;
+    position: relative;
+    &-container {
+        text-align: center;
+    }
+    &__height-container {
+        box-shadow: var(--box-shadow);
+        font-weight: bold;
+        background-color: #fff;
+        border-radius: 100%;
+        @include flex(row,nowrap, center,center,0);
+        
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-25%, -25%);
+    }
+    &__weight-container {
+        font-weight: bold;
+        box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.029);
+        background-color: #fff;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(25%, -25%);
+    }
+
+    &__img-container{
+        position: absolute;
+        top:1rem;
+        width: 30%;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    &__img{
+        width: 100%;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        &-number {
+            font-weight: 700;
+            font-size: 8rem;
+            margin: 0;
+            line-height: 0.8em;
+            color: rgba(207, 207, 207, 0.544);
+        }
+        &-name {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        &-gender{
+            margin:0;
+        }
+        &-type {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+            line-height: 0.8em;
+            font-size: 1.2rem;
+        }
+        &-skill {
+            font-weight: bold;
+            margin: 0;
+            line-height: 0.8em;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+
+// poke-stats
+// poke-stats-container
+// poke-stat__container
+// poke-stat__label
+// poke-stat__refer
+
+.poke{
+    &-stats{
+        &-container{
+            // outline: 1px solid red;
+        }
+    }
+    &-stat{
+        &__container{
+            display: flex;
+            gap:1.5rem;
+            // justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+        }
+        &__label{
+            // direction: ;
+            direction:rtl;
+            width: 115px;
+            margin:0;
+        }
+        &__meter{
+            height: 1.5rem;
+            width: 200px;
+        }
+        &__amount{
+            margin: 0;
+        }
+    }
+}
+
+// header
+// header-container
+// header__title
+
+.header{
+    background-color: var(--bg-color-dark);
+    font-size: 1.5rem;
+    font-family: var(--poke-font-family);
+    @include flex(row,nowrap, center,center,0);
+    &-container{
+        max-width: 1080px;
+        padding: 1rem
+    }
+    &__title{
+        letter-spacing: 1rem;
+        color:var(--text-color-white);
+        margin:0;
+    }
+}
