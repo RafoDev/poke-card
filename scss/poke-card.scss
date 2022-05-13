@@ -1,0 +1,119 @@
+.poke-card {
+    background-color: var(--card-color);
+    padding: 2em 1.5em;
+    box-shadow: var(--box-shadow);
+    width: 400px;
+    border-radius: 1rem;
+    position: relative;
+    &-container {
+        text-align: center;
+    }
+    &__height-container {
+        box-shadow: var(--box-shadow);
+        font-weight: bold;
+        background-color: #fff;
+        border-radius: 100%;
+        @include flex(row,nowrap, center,center,0);
+        
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-25%, -25%);
+    }
+    &__weight-container {
+        font-weight: bold;
+        box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.029);
+        background-color: #fff;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(25%, -25%);
+    }
+
+    &__img-container{
+        position: absolute;
+        top:1rem;
+        width: 30%;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    &__img{
+        width: 100%;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        &-number {
+            font-weight: 700;
+            font-size: 8rem;
+            margin: 0;
+            line-height: 0.8em;
+            color: rgba(207, 207, 207, 0.544);
+        }
+        &-name {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        &-gender{
+            margin:0;
+        }
+        &-type {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+            line-height: 0.8em;
+            font-size: 1.2rem;
+        }
+        &-skill {
+            font-weight: bold;
+            margin: 0;
+            line-height: 0.8em;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.poke{
+    &-stats{
+        &-container{
+            // outline: 1px solid red;
+        }
+    }
+    &-stat{
+        &__container{
+            display: flex;
+            gap:1.5rem;
+            // justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+        }
+        &__label{
+            // direction: ;
+            direction:rtl;
+            width: 115px;
+            margin:0;
+        }
+        &__meter{
+            height: 1.5rem;
+            width: 200px;
+        }
+        &__amount{
+            margin: 0;
+        }
+    }
+}
